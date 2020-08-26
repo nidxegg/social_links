@@ -47,12 +47,12 @@ class TestLogin():
     dropdown.find_element(By.XPATH, "//option[. = 'Kazakhstan']").click()
     self.driver.find_element(By.ID, "profile-country").click()
     self.driver.find_element(By.ID, "profile-phone").clear()
-    self.driver.find_element(By.ID, "profile-phone").send_keys("7776160776")
+    self.driver.find_element(By.ID, "profile-phone").send_keys("77761607761")
     self.driver.find_element(By.ID, "profile-busseg").click()
     dropdown = self.driver.find_element(By.ID, "profile-busseg")
     dropdown.find_element(By.XPATH, "//option[. = 'Police']").click()
     self.driver.find_element(By.ID, "profile-busseg").click()
     self.driver.find_element(By.CSS_SELECTOR, ".form-group:nth-child(7) > .btn:nth-child(1)").click()
     time.sleep(3)
-    c = self.driver.find_element(By.CSS_SELECTOR, "#panel > main > div:nth-child(6) > section > form > div:nth-child(6) > div") #== True, 'Данные не обновлены'
-    print(c)
+    assertFalse(self.driver.find_element(By.CSS_SELECTOR, "#panel > main > div:nth-child(6) > section > form > div:nth-child(6) > div")) 
+    
