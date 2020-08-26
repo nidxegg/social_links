@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support import expected_conditions as EC   
 
 class TestLogin():
   def setup_method(self, method):
@@ -47,12 +48,14 @@ class TestLogin():
     dropdown.find_element(By.XPATH, "//option[. = 'Kazakhstan']").click()
     self.driver.find_element(By.ID, "profile-country").click()
     self.driver.find_element(By.ID, "profile-phone").clear()
-    self.driver.find_element(By.ID, "profile-phone").send_keys("77761607761")
+    self.driver.find_element(By.ID, "profile-phone").send_keys("7776460761")
     self.driver.find_element(By.ID, "profile-busseg").click()
     dropdown = self.driver.find_element(By.ID, "profile-busseg")
     dropdown.find_element(By.XPATH, "//option[. = 'Police']").click()
     self.driver.find_element(By.ID, "profile-busseg").click()
     self.driver.find_element(By.CSS_SELECTOR, ".form-group:nth-child(7) > .btn:nth-child(1)").click()
     time.sleep(3)
-    assertFalse(self.driver.find_element(By.CSS_SELECTOR, "#panel > main > div:nth-child(6) > section > form > div:nth-child(6) > div")) 
+    pagination_block = WebDriverWait(self.driver, 4).until(EC.visibility_of_element_located(
+                   (By.XPATH, '/html/body/div[2]/div[5]/main/div[6]/section/form/div[6]/div/strong')), message='Регистрация не успешна')
+    
     
