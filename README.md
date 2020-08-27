@@ -1,4 +1,6 @@
 # social_links
+#запуск виртуального окружения python3
+d:\Python\social_links\env\Scripts\activate
 #запуск позитивных тестов
 pytest -v --tb=line -m positive ваш каталог копирования\social_links\  
 #запуск негативных тестов
