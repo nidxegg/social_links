@@ -1,4 +1,5 @@
 # social_links
+Демонстрация работы https://www.youtube.com/watch?v=Ulr2EC4z69g
 #запуск виртуального окружения python3
 d:\Python\social_links\env\Scripts\activate
 #запуск позитивных тестов
